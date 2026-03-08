@@ -1,0 +1,5 @@
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=labwc &
+/usr/lib/xdg-desktop-portal-wlr &
+waybar -c .config/waybar/configbottom.jsonc -s .config/waybar/stylebottom.css &
+waybar &
+swww-daemon &

@@ -1,0 +1,385 @@
+<!--
+  based on Deive's awesome work
+  labwc configuration
+  cleaned & commented version
+
+  modifier keys:
+    W = Super/Win
+    A = Alt
+    C = Ctrl
+    S = Shift
+-->
+
+<labwc_config>
+
+  <!-- ================= CORE ================= -->
+  <!-- compositor behaviour -->
+  <core>
+    <decoration>server</decoration>          <!-- server-side decorations -->
+    <gap>8</gap>                            <!-- space between tiled windows -->
+
+    <adaptiveSync>no</adaptiveSync>          <!-- freesync/gsync -->
+    <allowTearing>no</allowTearing>
+
+    <autoEnableOutputs>yes</autoEnableOutputs>
+    <reuseOutputMode>no</reuseOutputMode>
+
+    <xwaylandPersistence>no</xwaylandPersistence>
+    <primarySelection>yes</primarySelection>
+  </core>
+
+
+  <!-- ================= WINDOW PLACEMENT ================= -->
+  <placement>
+    <policy>cascade</policy>                 <!-- new windows offset from last -->
+    <cascadeOffset x="40" y="30"/>
+  </placement>
+
+
+  <!-- ================= THEME ================= -->
+  <theme>
+    <name>core</name>
+    <icon>YAMIS</icon>
+    <fallbackAppIcon>labwc</fallbackAppIcon>
+
+    <cornerRadius>0</cornerRadius>
+    <keepBorder>yes</keepBorder>
+    <maximizedDecoration>titlebar</maximizedDecoration>
+
+    <dropShadows>no</dropShadows>
+    <dropShadowsOnTiled>no</dropShadowsOnTiled>
+
+    <!-- titlebar buttons -->
+    <titlebar>
+      <layout>icon:iconify,max,close</layout>
+      <showTitle>yes</showTitle>
+    </titlebar>
+
+    <!-- fonts -->
+    <font place="ActiveWindow">
+      <name>sans</name>
+      <size>10</size>
+    </font>
+
+    <font place="InactiveWindow">
+      <name>sans</name>
+      <size>10</size>
+    </font>
+
+    <font place="MenuHeader">
+      <name>sans</name>
+      <size>10</size>
+    </font>
+
+    <font place="MenuItem">
+      <name>sans</name>
+      <size>10</size>
+    </font>
+
+    <font place="OnScreenDisplay">
+      <name>sans</name>
+      <size>10</size>
+    </font>
+  </theme>
+
+
+  <!-- ================= WINDOW SWITCHER (ALT+TAB) ================= -->
+  <windowSwitcher preview="yes" outlines="yes" unshade="yes">
+    <osd show="yes" style="thumbnail" output="all" thumbnailLabelFormat="%T"/>
+
+    <fields>
+      <field content="icon" width="5%"/>
+      <field content="desktop_entry_name" width="30%"/>
+      <field content="title" width="65%"/>
+    </fields>
+  </windowSwitcher>
+
+
+  <!-- ================= EDGE RESISTANCE ================= -->
+  <!-- how "sticky" edges feel -->
+  <resistance>
+    <screenEdgeStrength>20</screenEdgeStrength>
+    <windowEdgeStrength>20</windowEdgeStrength>
+
+    <unSnapThreshold>20</unSnapThreshold>
+    <unMaximizeThreshold>150</unMaximizeThreshold>
+  </resistance>
+
+
+  <!-- ================= RESIZE BEHAVIOUR ================= -->
+  <resize>
+    <popupShow>Never</popupShow>             <!-- resize indicator -->
+    <drawContents>yes</drawContents>         <!-- live resize -->
+    <minimumArea>8</minimumArea>             <!-- effective border size -->
+  </resize>
+
+
+  <!-- ================= FOCUS ================= -->
+  <focus>
+    <followMouse>yes</followMouse>
+    <followMouseRequiresMovement>yes</followMouseRequiresMovement>
+    <raiseOnFocus>no</raiseOnFocus>
+  </focus>
+
+
+  <!-- ================= WINDOW SNAPPING ================= -->
+  <snapping>
+    <range inner="10" outer="10"/>
+    <cornerRange>50</cornerRange>
+
+    <overlay enabled="yes">
+      <delay inner="500" outer="500"/>
+    </overlay>
+
+    <topMaximize>yes</topMaximize>
+    <notifyClient>always</notifyClient>
+  </snapping>
+
+
+  <!-- ================= DESKTOPS ================= -->
+  <desktops>
+    <popupTime>1000</popupTime>
+    <initial>1</initial>
+
+    <names>
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
+    </names>
+  </desktops>
+
+
+  <!-- ================= KEYBINDS ================= -->
+  <keyboard>
+    <layoutScope>global</layoutScope>
+
+    <repeatRate>40</repeatRate>
+    <repeatDelay>400</repeatDelay>
+
+    <!-- window switching -->
+    <keybind key="A-Tab">
+      <action name="NextWindow"/>
+    </keybind>
+
+    <keybind key="A-S-Tab">
+      <action name="PreviousWindow"/>
+    </keybind>
+
+    <!-- apps -->
+    <keybind key="W-t">
+      <action name="Execute" command="kitty"/>
+    </keybind>
+
+    <keybind key="A-space">
+      <action name="Execute" command="wofi --show drun"/>
+    </keybind>
+
+    <keybind key="W-l">
+      <action name="Execute"
+              command="hyprlock"/>
+    </keybind>
+
+    <keybind key="W-n">
+      <action name="Execute"
+              command="swaync-client -t"/>
+    </keybind>
+
+    <keybind key="W-z">
+      <action name="Execute"
+              command="waypaper"/>
+    </keybind>
+
+   <keybind key="W-o">
+      <action name="Execute"
+              command="labwc --reconfigure"/>
+    </keybind>
+
+       <keybind key="W-q">
+        <action name="Execute"
+              command="firefox"/>
+    </keybind>
+
+   <keybind key="W-x">
+      <action name="Execute"
+              command="wofi-emoji"/>
+    </keybind>
+
+   <keybind key="W-escape">
+      <action name="Execute"
+              command="nwg-bar"/>
+    </keybind>
+
+
+    <keybind key="W-S-s">
+      <action name="Execute" command="flameshot gui"/>
+    </keybind>
+
+    <keybind key="W-E">
+      <action name="Execute" command="nautilus"/>
+    </keybind>
+
+    <!-- window controls -->
+    <keybind key="W-w">
+      <action name="Close"/>
+    </keybind>
+
+    <keybind key="W-a">
+      <action name="ToggleMaximize"/>
+    </keybind>
+
+    <keybind key="A-f">
+      <action name="ToggleFullscreen"/>
+    </keybind>
+
+    <!-- tiling -->
+    <keybind key="W-Left">
+      <action name="SnapToEdge" direction="left" combine="yes"/>
+    </keybind>
+
+    <keybind key="W-Right">
+      <action name="SnapToEdge" direction="right" combine="yes"/>
+    </keybind>
+
+    <keybind key="W-Up">
+      <action name="SnapToEdge" direction="up" combine="yes"/>
+    </keybind>
+
+    <keybind key="W-Down">
+      <action name="SnapToEdge" direction="down" combine="yes"/>
+    </keybind>
+
+    <!-- audio -->
+    <keybind key="XF86_AudioLowerVolume">
+      <action name="Execute"
+              command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"/>
+    </keybind>
+
+    <keybind key="XF86_AudioRaiseVolume">
+      <action name="Execute"
+              command="wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"/>
+    </keybind>
+
+    <keybind key="XF86_AudioMute">
+      <action name="Execute"
+              command="amixer sset Master toggle"/>
+    </keybind>
+
+    <!-- desktops -->
+    <keybind key="W-1">
+      <action name="GoToDesktop" to="1"/>
+    </keybind>
+
+    <keybind key="W-2">
+      <action name="GoToDesktop" to="2"/>
+    </keybind>
+
+    <keybind key="W-3">
+      <action name="GoToDesktop" to="3"/>
+    </keybind>
+
+    <keybind key="W-4">
+      <action name="GoToDesktop" to="4"/>
+    </keybind>
+
+    <!-- move windows -->
+    <keybind key="W-S-1">
+      <action name="SendToDesktop" to="1" follow="yes"/>
+    </keybind>
+
+    <keybind key="W-S-2">
+      <action name="SendToDesktop" to="2" follow="yes"/>
+    </keybind>
+
+    <keybind key="W-S-3">
+      <action name="SendToDesktop" to="3" follow="yes"/>
+    </keybind>
+
+    <keybind key="W-S-4">
+      <action name="SendToDesktop" to="4" follow="yes"/>
+    </keybind>
+  </keyboard>
+
+
+  <!-- ================= MOUSE ================= -->
+  <mouse>
+
+    <doubleClickTime>250</doubleClickTime>
+
+    <!-- move window -->
+    <context name="Frame">
+      <mousebind button="W-Left" action="Drag">
+        <action name="Move"/>
+      </mousebind>
+
+      <mousebind button="W-Right" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+
+    <!-- titlebar -->
+    <context name="Title">
+      <mousebind button="Left" action="Drag">
+        <action name="Move"/>
+      </mousebind>
+
+      <mousebind button="Left" action="DoubleClick">
+        <action name="ToggleMaximize"/>
+      </mousebind>
+
+      <mousebind button="Right" action="Click">
+        <action name="ShowMenu" menu="client-menu"/>
+      </mousebind>
+    </context>
+
+  </mouse>
+
+
+  <!-- ================= INPUT DEVICES ================= -->
+  <libinput>
+    <device category="default">
+
+      <naturalScroll>no</naturalScroll>
+
+      <tap>yes</tap>
+      <tapAndDrag>yes</tapAndDrag>
+
+      <scrollMethod>edge</scrollMethod>
+      <scrollFactor>1.0</scrollFactor>
+
+    </device>
+  </libinput>
+
+
+  <!-- ================= WINDOW RULES ================= -->
+  <windowRules>
+    <windowRule identifier="xfce4-panel" matchOnce="true">
+
+      <skipTaskbar>no</skipTaskbar>
+
+      <action name="MoveTo" x="0" y="0"/>
+      <action name="ToggleAlwaysOnTop"/>
+
+    </windowRule>
+  </windowRules>
+
+
+  <!-- ================= MENU ================= -->
+  <menu>
+    <ignoreButtonReleasePeriod>250</ignoreButtonReleasePeriod>
+    <showIcons>yes</showIcons>
+  </menu>
+
+
+  <!-- ================= MAGNIFIER ================= -->
+  <magnifier>
+    <width>400</width>
+    <height>400</height>
+
+    <initScale>2.0</initScale>
+    <increment>0.2</increment>
+
+    <useFilter>yes</useFilter>
+  </magnifier>
+
+</labwc_config>

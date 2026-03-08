@@ -1,0 +1,119 @@
+# ============================================================
+#  "Rosé" Labwc Theme (Matugen Template)
+# original pelo deive tuffo
+# ============================================================
+
+# --- Font ---
+font.activeWindow: Sans Bold 9
+font.inactiveWindow: Sans 9
+font.menuItem: Sans 9
+font.activeOnScreenDisplay: Sans Bold 9
+font.inactiveOnScreenDisplay: Sans 9
+
+# ============================================================
+# ACTIVE WINDOW
+# ============================================================
+
+# Title Bar
+window.active.title.bg: flat solid
+window.active.title.bg.color: {{colors.surface_dim.default.hex}}
+
+# Text color
+window.active.label.text.color: {{colors.on_surface.default.hex}}
+
+# Buttons
+window.active.button.unpressed.image.color: {{colors.outline.default.hex}}
+window.active.button.pressed.image.color: {{colors.primary_fixed_dim.default.hex}}
+window.active.button.hover.image.color: {{colors.primary_fixed_dim.default.hex}}
+
+# Border
+window.active.border.color: {{colors.primary_fixed_dim.default.hex}}
+
+# Handle (resize grip)
+window.active.handle.bg: flat solid
+window.active.handle.bg.color: {{colors.surface_dim.default.hex}}
+window.active.grip.bg: flat solid
+window.active.grip.bg.color: {{colors.primary_fixed_dim.default.hex}}
+
+# ============================================================
+# INACTIVE WINDOW
+# ============================================================
+
+# Title Bar
+window.inactive.title.bg: flat solid
+window.inactive.title.bg.color: {{colors.surface.default.hex}}
+
+# Text
+window.inactive.label.text.color: {{colors.outline.default.hex}}
+
+# Buttons
+window.inactive.button.unpressed.image.color: {{colors.surface_container_low.default.hex}}
+window.inactive.button.pressed.image.color: {{colors.outline.default.hex}}
+window.inactive.button.hover.image.color: {{colors.outline.default.hex}}
+
+# Borders
+window.inactive.border.color: {{colors.surface_container_low.default.hex}}
+
+# Handle
+window.inactive.handle.bg: flat solid
+window.inactive.handle.bg.color: {{colors.surface.default.hex}}
+window.inactive.grip.bg: flat solid
+window.inactive.grip.bg.color: {{colors.surface_container_low.default.hex}}
+
+# ============================================================
+# DIMENSIONS
+# ============================================================
+
+border.width: 1
+
+window.client.padding.width: 0
+window.client.padding.height: 0
+
+window.handle.width: 2
+
+padding.width: 4
+padding.height: 3
+
+# ============================================================
+# MENU
+# ============================================================
+
+menu.border.width: 1
+menu.border.color: {{colors.surface_container_low.default.hex}}
+
+menu.items.bg: flat solid
+menu.items.bg.color: {{colors.surface.default.hex}}
+menu.items.text.color: {{colors.outline.default.hex}}
+menu.items.disabled.text.color: {{colors.surface_container_low.default.hex}}
+
+menu.items.active.bg: flat solid
+menu.items.active.bg.color: {{colors.surface_dim.default.hex}}
+menu.items.active.text.color: {{colors.on_surface.default.hex}}
+menu.items.active.disabled.text.color: {{colors.outline.default.hex}}
+
+menu.title.bg: flat solid
+menu.title.bg.color: {{colors.surface_dim.default.hex}}
+menu.title.text.color: {{colors.primary_fixed_dim.default.hex}}
+
+menu.separator.color: {{colors.surface_container_low.default.hex}}
+menu.separator.width: 1
+menu.separator.padding.width: 4
+menu.separator.padding.height: 2
+
+# ============================================================
+# OSD (snap regions / resize info)
+# ============================================================
+
+osd.border.width: 1
+osd.border.color: {{colors.primary_fixed_dim.default.hex}}
+
+osd.bg: flat solid
+osd.bg.color: {{colors.surface.default.hex}}
+
+osd.label.text.color: {{colors.on_surface.default.hex}}
+
+osd.hilight.bg: flat solid
+osd.hilight.bg.color: {{colors.primary_fixed_dim.default.hex}}
+
+osd.unhilight.bg: flat solid
+osd.unhilight.bg.color: {{colors.surface_container_low.default.hex}}
