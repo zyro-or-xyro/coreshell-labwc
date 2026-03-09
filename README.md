@@ -20,7 +20,7 @@ Recommended install [EXPERIMENTAL](backup first, this overwrites your existing d
 git clone https://github.com/zyro-or-xyro/coreshell
 cd .config
 rm -rf btop kitty labwc waybar wofi fastfetch matugen nwg-bar waypaper
-cd ~/coreshell/dotfiles
+cd ~/coreshell-labwc/dotfiles
 mv -r * ~/.config
 cd ..
 mv .zshrc ~/
